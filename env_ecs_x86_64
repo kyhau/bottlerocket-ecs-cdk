@@ -1,0 +1,2 @@
+AMI_SSM_PARAM=/aws/service/bottlerocket/aws-ecs-1/x86_64/1.8.0/image_id
+INSTANCE_TYPE=t3.large

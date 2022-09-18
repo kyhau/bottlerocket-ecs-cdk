@@ -1,0 +1,101 @@
+node_modules
+
+**/build
+**/dist
+.serverless
+.build
+.dynamodb
+.blue-green-env
+
+cdk.out
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+### Compiled class file ###
+*.class
+##*.jar
+*.war
+*.ear
+*.tar.gz
+*.rar
+**/target/
+**/target/**
+
+### Gradle ###
+.gradle
+build/
+!**/gradle-wrapper.jar
+!**/src/main/**
+!**/src/test/**
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+out/
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+
+### Visual Studio ###
+.vs/
+
+### Eclipse ###
+**/*.txt
+
+### Log files ###
+transaction-logs
+logs
+**/*.log
+
+### OSX files ###
+**/.DS_Store
+**/*.pid.lock
+
+### Python ###
+venv
+__pycache__
+
+**/.yarn-integrity
+**/.yarn/*
+!.yarn/cache
+!.yarn/releases
+!.yarn/plugins
+!.yarn/sdks
+!.yarn/versions
+
+# Avro Schemas
+**/src/main/avro/
+
+# jdk env
+.java-version
+
+# Builds
+_version.json
+
+*.pem
+*.crt
+charts/**/charts
+.idea/
+tmpcharts*
+tags.json
+
+outputs/
+reports/
+
+*.zip
+target/
+.bloop
+.metals

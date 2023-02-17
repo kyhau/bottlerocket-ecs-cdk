@@ -1,0 +1,27 @@
+[settings.metrics]
+send-metrics = false
+# By default, Bottlerocket sends anonymous metrics when it boots, and once every six hours.
+# This can be disabled by setting send-metrics to false.
+
+[settings.kernel]
+lockdown = "integrity"
+# This limits an attacker’s ability to overwrite the kernel’s memory or modify its code.
+# It also can prevent an attacker from loading unsigned kernel modules.
+
+[settings.host-containers.admin]
+enabled = false
+# Admin container is disabled by default. Keep it disabled until you really need it.
+# You can enable it directly with API in the control container of the instance.
+
+superpowered = false
+# Whether the admin container has high levels of access to the Bottlerocket host.
+# Keep it disabled.
+
+[settings.host-containers.control.enabled]
+enabled = true
+# Control container is enabled by default. Keep it enabled.
+# Control container runs the SSM agent (needed for Session Manager and Inspector).
+
+superpowered = false
+# Whether the control container has high levels of access to the Bottlerocket host.
+# Keep it disabled.

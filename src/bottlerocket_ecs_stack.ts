@@ -3,6 +3,7 @@ import {
     InstanceType,
     MachineImage,
     OperatingSystemType,
+    UserData,
     Vpc
 } from "aws-cdk-lib/aws-ec2"
 import {
@@ -14,6 +15,7 @@ import {
     MachineImageType,
     PlacementStrategy
 } from "aws-cdk-lib/aws-ecs"
+import { readFileSync } from "fs"
 //import { ManagedPolicy } from "aws-cdk-lib/aws-iam"
 import { Fn, Stack, Tags } from "aws-cdk-lib"
 import { Construct } from "constructs"
@@ -49,6 +51,11 @@ export class BottlerocketEcs extends Stack {
         vpc: vpc,
     })
 
+    const rawData = readFileSync('src/sample_user_data.toml', 'utf8');
+    // const vars = {efsId: Efs.fileSystemId};
+    // const userData = UserData.custom(Fn.sub(rawData, vars));
+    const userData = UserData.custom(rawData);
+
     const bottlerocketAsg = new AutoScalingGroup(this, `${id}-asg`, {
       vpc: vpc,
       instanceType: new InstanceType(instanceType),
@@ -59,7 +66,7 @@ export class BottlerocketEcs extends Stack {
             // CDK will add the following, no need to add separately
             // [settings.ecs]
             // cluster =
-            //userData: UserData.custom(`[settings.ecs]\ncluster = "${clusterName}"`)
+            userData: userData
         }
       ),
       minCapacity: 0,

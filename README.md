@@ -9,13 +9,11 @@ This includes deploying a Bottlerocket [updater](https://github.com/bottlerocket
 (Assume account/region are bootstrapped)
 
 ```bash
-ARCH=arm64
-cdk deploy k-ecs-bottlerocket-arm64 --require-approval never
+ARCH=arm64 cdk deploy k-ecs-bottlerocket-arm64 --require-approval never
 ```
 Or
 ```bash
-ARCH=x86_64
-cdk deploy k-ecs-bottlerocket-x86-64 --require-approval never
+ARCH=x86_64 cdk deploy k-ecs-bottlerocket-x86-64 --require-approval never
 ```
 
 ## Updater controller

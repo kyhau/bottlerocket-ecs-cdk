@@ -2,9 +2,21 @@ version: 2
 updates:
   - package-ecosystem: github-actions
     directory: "/"
+    groups:
+      all-dependencies:
+        patterns:
+          - "*"
     schedule:
       interval: weekly
+      time: "08:00"
+      timezone: Australia/Melbourne
   - package-ecosystem: yarn
     directory: "/"
+    groups:
+      all-dependencies:
+        patterns:
+          - "*"
     schedule:
-    open-pull-requests-limit: 3
+      interval: weekly
+      time: "08:00"
+      timezone: Australia/Melbourne
